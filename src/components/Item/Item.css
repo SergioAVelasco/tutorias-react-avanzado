@@ -1,0 +1,27 @@
+.img-item {
+  max-width: 300px;
+}
+
+.item-wrapper {
+  padding: 15px;
+  margin: 15px;
+  border: 2px solid #a5c9ca;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.item-info {
+  margin-top: auto;
+  width: 80%;
+  margin: 15px auto 0;
+}
+
+.add-to-shop {
+  border: none;
+  padding: 5px 10px;
+  background-color: #395b64;
+  color: #e7f6f2;
+  width: 90%;
+  margin: 0 auto;
+}

@@ -1,0 +1,25 @@
+.shopping-content-wrapper {
+  min-width: 400px;
+  position: absolute;
+  background-color: white;
+  top: 50px;
+  right: 0;
+  border: 1px solid #395b64;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.shopping-items-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping-items-single {
+  font-weight: 400;
+  display: flex;
+  justify-content: space-between;
+}
+.delete-item-button {
+  border: none;
+  background-color: transparent;
+}
