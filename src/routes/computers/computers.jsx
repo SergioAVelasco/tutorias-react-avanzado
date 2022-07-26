@@ -6,7 +6,7 @@ import img1 from "./images/c001.jpg";
 import img2 from "./images/c002.jpeg";
 import img3 from "./images/c003.jpg";
 
-const Computers = () => {
+const Computers = ({ shoppingCar, addItem, deleteItem }) => {
   const [computers] = useState([
     {
       id: "c001",
@@ -35,12 +35,18 @@ const Computers = () => {
   ]);
 
   return (
-    <Layout>
+    <Layout shoppingCar={shoppingCar} deleteItem={deleteItem}>
       <div className="computer-wrapper">
         <h2>Computadoras</h2>
         <div className="items-container">
           {computers.map((currentComputer) => {
-            return <Item item={currentComputer} />;
+            return (
+              <Item
+                item={currentComputer}
+                addItem={addItem}
+                key={currentComputer.id}
+              />
+            );
           })}
         </div>
       </div>

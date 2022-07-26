@@ -5,7 +5,7 @@ import Img1 from "./images/c001.jpg";
 import Img2 from "./images/c002.webp";
 import Item from "../../components/Item/Item";
 
-const Phones = () => {
+const Phones = ({ shoppingCar, addItem, deleteItem }) => {
   const [phones] = useState([
     {
       id: "ce001",
@@ -20,13 +20,20 @@ const Phones = () => {
       img: Img2,
     },
   ]);
+
   return (
-    <Layout>
+    <Layout shoppingCar={shoppingCar} deleteItem={deleteItem}>
       <div>
         <h2>Telefonos</h2>
         <div className="items-container">
           {phones.map((currentPhone) => {
-            return <Item item={currentPhone} />;
+            return (
+              <Item
+                item={currentPhone}
+                addItem={addItem}
+                key={currentPhone.id}
+              />
+            );
           })}
         </div>
       </div>

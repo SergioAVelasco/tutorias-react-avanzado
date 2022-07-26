@@ -1,10 +1,10 @@
 import "./Layout.css";
 import Header from "../Header/Header";
 
-const Layout = ({ children }) => {
+const Layout = ({ children, shoppingCar, deleteItem }) => {
   return (
     <div className="layout-wrapper">
-      <Header />
+      <Header shoppingCar={shoppingCar} deleteItem={deleteItem} />
       {children}
     </div>
   );

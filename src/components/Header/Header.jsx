@@ -3,19 +3,9 @@ import { Link } from "react-router-dom";
 import ShoppingImg from "./assets/shoping-cart.svg";
 import { useState } from "react";
 import Shopping from "../Shopping/Shopping";
-import img1 from "../../routes/computers/images/c001.jpg";
 
-const Header = () => {
-  const [shoopingCar, setShoopingCar] = useState([
-    {
-      id: "c001",
-      brand: "Apple",
-      model: "M1",
-      img: img1,
-    },
-  ]);
+const Header = (props) => {
   const [openShopping, setOpenShopping] = useState(false);
-
   const toogleShooping = () => setOpenShopping(!openShopping);
 
   return (
@@ -34,9 +24,11 @@ const Header = () => {
       <div className="shopping-container">
         <div className="shopping-wrapper" onClick={toogleShooping}>
           <img src={ShoppingImg} alt="" className="shopping-img" />{" "}
-          <div className="shopping-count">{"0 articulos"}</div>
+          <div className="shopping-count">{`${props.shoppingCar.length} articulos`}</div>
         </div>
-        {openShopping && <Shopping items={shoopingCar} />}
+        {openShopping && (
+          <Shopping items={props.shoppingCar} deleteItem={props.deleteItem} />
+        )}
       </div>
     </div>
   );

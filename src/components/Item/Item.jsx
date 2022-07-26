@@ -1,9 +1,11 @@
 import "./Item.css";
 
-const Item = ({ item }) => {
+const Item = ({ item, addItem }) => {
   return (
-    <div className="item-wrapper">
-      <button className="add-to-shop">Agregar al carrito</button>
+    <div className="item-wrapper" key={item.id}>
+      <button className="add-to-shop" onClick={() => addItem(item)}>
+        Agregar al carrito
+      </button>
       <div className="item-info">
         <p>
           <b>Marca: </b>
